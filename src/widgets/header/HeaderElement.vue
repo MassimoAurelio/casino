@@ -20,7 +20,8 @@ const headerNavStore = useHeaderNav()
           </div>
           <div class="header_signup-btn">
             <Button size="medium" color="primary" decoration="default" disabled="disabled"
-              ><Typography size="m" bold tag="span">SignUp</Typography></Button
+              ><Typography size="m" bold tag="span">SignUp</Typography>
+              </Button
             >
           </div>
         </div>
