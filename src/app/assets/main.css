@@ -1,6 +1,5 @@
 @import './base.css';
 
-
 :root {
   /* colors */
   --main-background: #f4f4f2;
@@ -19,6 +18,9 @@
   --pallete-info: #1cb9fc;
   --pallete-warning: #fca21c;
   --pallete-error: #d80000;
+  --header-bg: linear-gradient(88.83deg, #000000 21.38%, #7e6ac6 100%);
+  --base-body-bg: #000000;
+  --mc-skip-btn-bg: #c4c4c4;
 
   /* shadows */
   --shadow-default-xs: 1px 2px 4px 0px rgba(0, 0, 0, 0.1);

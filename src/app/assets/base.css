@@ -1,18 +1,23 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 400;
-  }
-  
-  ul,
-  ol {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: unset;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+body {
+  background: var(--base-body-bg);
+}
