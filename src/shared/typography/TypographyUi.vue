@@ -1,8 +1,9 @@
 <script setup lang="ts">
 interface Props {
   tag: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
-  bold: boolean
-  size: 'xs' | 's' | 'm' | 'l' | 'xl'
+  bold?: boolean
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl'
+  color?: 'white' | 'black' | 'red' | 'link'
 }
 
 const props = defineProps<Props>()
@@ -12,7 +13,13 @@ const props = defineProps<Props>()
   <div>
     <component
       :is="props.tag"
-      :class="['typography', size ? `size_${size}` : '', bold ? 'bold' : '', `tag${tag}`]"
+      :class="[
+        'typography',
+        size ? `size_${size}` : '',
+        bold ? 'bold' : '',
+        `tag${tag}`,
+        `color_${color}`
+      ]"
     >
       <slot> </slot>
     </component>
@@ -28,7 +35,6 @@ const props = defineProps<Props>()
 
 .size_xs {
   font-size: 12px;
-
 }
 
 .size_s {
@@ -63,7 +69,19 @@ const props = defineProps<Props>()
   font-size: 18px;
 }
 
-.bold{
+.bold {
   font-weight: 700;
 }
+
+.color_white {
+  color: var(--main-surface);
+}
+.color_black {
+  color: var(--base-body-bg);
+}
+
+.color_link {
+  color: var(--form-text-link-color);
+}
+
 </style>

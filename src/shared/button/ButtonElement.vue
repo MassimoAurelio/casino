@@ -3,15 +3,15 @@ import { useSlots } from 'vue'
 import Typography from '../typography/TypographyUi.vue'
 
 interface Props {
-  color: 'primary' | 'secondary' | 'erorr' | 'greyscale'
+  color?: 'primary' | 'secondary' | 'erorr' | 'greyscale' | 'link'
   decoration?: 'default' | 'outline' | 'none'
   size: 'small' | 'medium' | 'big'
-  disabled: 'disabled'
+  text?: string
 }
 
 const props = defineProps<Props>()
 const slots = useSlots()
-const { color = 'primary', decoration = 'default', size = 'M', disabled = false } = props
+const { color = 'primary', decoration = 'default', size = 'M' } = props
 
 const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${color}`]
 </script>
@@ -55,6 +55,9 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
 .button.color_secondary {
   background-color: var(--main-primary);
   color: var(--main-surface);
+}
+.button.color_link {
+  color: blue;
 }
 
 .size_big {

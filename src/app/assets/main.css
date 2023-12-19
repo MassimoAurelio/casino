@@ -21,6 +21,8 @@
   --header-bg: linear-gradient(88.83deg, #000000 21.38%, #7e6ac6 100%);
   --base-body-bg: #000000;
   --mc-skip-btn-bg: #c4c4c4;
+  --field-error-border-color: #c90726;
+  --form-text-link-color: #7f6bc8;
 
   /* shadows */
   --shadow-default-xs: 1px 2px 4px 0px rgba(0, 0, 0, 0.1);

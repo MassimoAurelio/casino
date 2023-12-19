@@ -19,5 +19,5 @@ a {
 }
 
 body {
-  background: var(--base-body-bg);
+  background: var(--grayscale-hardest);
 }

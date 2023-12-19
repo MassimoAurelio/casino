@@ -1,10 +1,18 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useUnAuthHeaderNav } from '@/app/stores/useHeaderNav'
 import Container from '@/shared/container/ContainerElement.vue'
 import Button from '@/shared/button'
 import Typography from '@/shared/typography/TypographyUi.vue'
+import LoginPopup from '@/pages/authPopup/LoginPopup.vue'
 
 const headerNavStore = useUnAuthHeaderNav()
+
+let isOpen = ref(false)
+
+function togglePopup() {
+  isOpen.value = !isOpen.value
+}
 </script>
 
 <template>
@@ -13,9 +21,12 @@ const headerNavStore = useUnAuthHeaderNav()
       <Container class="header_container">
         <div class="auth-btn">
           <div class="header_login-btn">
-            <Button size="medium" color="primary" decoration="default" disabled="disabled"
+            <Button @click="togglePopup" size="medium" color="primary" decoration="default"
               ><Typography size="m" bold tag="span">LogIn</Typography></Button
             >
+          </div>
+          <div class="login-popup">
+            <LoginPopup v-if="isOpen" />
           </div>
           <div class="header_signup-btn">
             <Button size="medium" color="primary" decoration="default" disabled="disabled"
@@ -57,7 +68,7 @@ const headerNavStore = useUnAuthHeaderNav()
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
-  gap: 10px;
+  gap: 5px;
   width: 100%;
   margin-top: 2%;
 }
@@ -85,8 +96,8 @@ const headerNavStore = useUnAuthHeaderNav()
   padding: 15px 0 13px;
 }
 
-.navigation-button:hover{
-  background-color: var( --grayscale-hard);
+.navigation-button:hover {
+  background-color: var(--grayscale-hard);
   transition: background-color 0.3s;
 }
 
@@ -108,6 +119,6 @@ const headerNavStore = useUnAuthHeaderNav()
 }
 
 .navigation-button:not(:last-child) {
- border-right: 1px solid #363636; 
+  border-right: 1px solid #363636;
 }
 </style>
