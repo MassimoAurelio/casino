@@ -4,14 +4,21 @@ import { useUnAuthHeaderNav } from '@/app/stores/useHeaderNav'
 import Container from '@/shared/container/ContainerElement.vue'
 import Button from '@/shared/button'
 import Typography from '@/shared/typography/TypographyUi.vue'
-import LoginPopup from '@/pages/authPopup/LoginPopup.vue'
+import LoginPopup from '@/pages/authPopup'
+import RegistrationPopup from '@/pages/registrationPopup'
 
 const headerNavStore = useUnAuthHeaderNav()
 
-let isOpen = ref(false)
+let isLogin = ref(false)
 
-function togglePopup() {
-  isOpen.value = !isOpen.value
+function toggleLoginPopup() {
+  isLogin.value = !isLogin.value
+}
+
+let isRegistr = ref(false)
+
+function toggleRegistrationPopup() {
+  isRegistr.value = !isRegistr.value
 }
 </script>
 
@@ -21,17 +28,25 @@ function togglePopup() {
       <Container class="header_container">
         <div class="auth-btn">
           <div class="header_login-btn">
-            <Button @click="togglePopup" size="medium" color="primary" decoration="default"
+            <Button @click="toggleLoginPopup" size="medium" color="primary" decoration="default"
               ><Typography size="m" bold tag="span">LogIn</Typography></Button
             >
-          </div>
-          <div class="login-popup">
-            <LoginPopup v-if="isOpen" />
+            <div class="login-popup">
+              <LoginPopup v-if="isLogin" :toggleRegistrationPopup="toggleRegistrationPopup" />
+            </div>
           </div>
           <div class="header_signup-btn">
-            <Button size="medium" color="primary" decoration="default" disabled="disabled"
+            <Button
+              @click="toggleRegistrationPopup"
+              size="medium"
+              color="primary"
+              decoration="default"
+              disabled="disabled"
               ><Typography size="m" bold tag="span">SignUp</Typography>
             </Button>
+            <div class="reg-popup" >
+              <RegistrationPopup v-if="isRegistr" :toggleLoginPopup="toggleLoginPopup"/>
+            </div>
           </div>
         </div>
         <div class="header_navigation">

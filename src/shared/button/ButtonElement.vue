@@ -3,7 +3,7 @@ import { useSlots } from 'vue'
 import Typography from '../typography/TypographyUi.vue'
 
 interface Props {
-  color?: 'primary' | 'secondary' | 'erorr' | 'greyscale' | 'link'
+  color?: 'primary' | 'secondary' | 'erorr' | 'greyscale' | 'link' | 'transparent'
   decoration?: 'default' | 'outline' | 'none'
   size: 'small' | 'medium' | 'big'
   text?: string
@@ -58,6 +58,10 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
 }
 .button.color_link {
   color: blue;
+}
+
+.button.color_transparent{
+  background-color: var(--main-surface);
 }
 
 .size_big {

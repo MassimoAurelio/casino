@@ -8,7 +8,7 @@ import Close from '@/app/assets/svg/close.svg'
 import Typography from '@/shared/typography/TypographyUi.vue'
 
 const props = defineProps({
-  toggleRegistrationPopup: Function
+  toggleLoginPopup: Function
 })
 
 let isOpen = ref(true)
@@ -19,11 +19,11 @@ function togglePopup() {
 </script>
 
 <template>
-  <ModalOverlay v-if="isOpen">
-    <ModalWindow v-if="isOpen">
+  <ModalOverlay>
+    <ModalWindow>
       <template v-slot:header>
         <div class="header-content">
-          <Typography tag="h2" color="black">LogIn</Typography>
+          <Typography tag="h2" color="black">Grab your Welcome Offer!</Typography>
           <div class="close-button">
             <Button @click="togglePopup" size="small" color="transparent">
               <img :src="Close" alt="close" />
@@ -33,6 +33,9 @@ function togglePopup() {
       </template>
       <div class="login-fields">
         <Field class="emeil-input" size="m" placeholder="Email" />
+        <Field class="name-input" size="m" placeholder="Name" />
+        <Field class="surname-input" size="m" placeholder="Surname" />
+        <Field class="birth-input" size="m" placeholder="Date of birth (YYYY-MM-DD)" />
         <Field class="password-input" size="m" placeholder="Password"
           ><template #rightIcon>
             <svg
@@ -52,19 +55,21 @@ function togglePopup() {
             </svg> </template
         ></Field>
         <div class="logIn-btn">
-          <Button size="medium">Submit</Button>
+          <Button size="medium">SignUp</Button>
         </div>
       </div>
       <template v-slot:footer>
         <div class="footer">
           <div class="to_registration">
-            <Typography tag="p" color="black">New user?</Typography>
-            <div class="to_registration-link" @click="props.toggleRegistrationPopup">
-              <Typography tag="span" color="link">SignUp</Typography>
+            <Typography tag="p" color="black">Already registered?</Typography>
+            <div class="to_registration-link" @click="props.toggleLoginPopup">
+              <Typography tag="span" color="link">LogIn</Typography>
             </div>
           </div>
           <div class="restore-btn">
-            <Typography tag="span" color="link">Restore Password</Typography>
+            <Typography tag="span" color="link"
+              >Up to 4000 C$ + 150 FS for the first 4 deposits</Typography
+            >
           </div>
         </div>
       </template>
@@ -73,15 +78,15 @@ function togglePopup() {
 </template>
 
 <style scoped>
-/* .popup {
+/* .login-popup {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 400px;
   height: auto;
-  border-radius: 15px;
   gap: 15px;
+  border-radius: 15px;
   background-color: var(--grayscale-lightest);
 } */
 
@@ -111,7 +116,10 @@ function togglePopup() {
 }
 
 .emeil-input,
-.password-input {
+.password-input,
+.surname-input,
+.birth-input,
+.name-input {
   width: 100%;
 }
 

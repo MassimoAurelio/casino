@@ -47,8 +47,8 @@ const { disabled = false, size = 'm', placeholder = ''} = props
 
 .field__input {
   width: 100%;
-  border-radius: 4px;
-  border: 1px solid var(--grayscale-light);
+  border-radius: 8px;
+  border: 2px solid var(--grayscale-light);
   background: var(--main-surface);
   color: var(--main-on-surface);
   transition: 0.3s ease-in-out;
@@ -121,17 +121,5 @@ const { disabled = false, size = 'm', placeholder = ''} = props
 
 .field.right-icon_true.size_l .field__input {
   padding-left: 40px;
-}
-
-@media screen and (max-width: 1207px) {
-  .field__input {
-    width: 325px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .field__input {
-    width: 263px;
-  }
 }
 </style>
