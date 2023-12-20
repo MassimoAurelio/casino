@@ -78,17 +78,6 @@ function togglePopup() {
 </template>
 
 <style scoped>
-/* .login-popup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: auto;
-  gap: 15px;
-  border-radius: 15px;
-  background-color: var(--grayscale-lightest);
-} */
 
 .close-button {
   width: 30px;
@@ -110,7 +99,7 @@ function togglePopup() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
   height: 100%;
 }

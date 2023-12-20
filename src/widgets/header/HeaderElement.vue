@@ -12,14 +12,17 @@ const headerNavStore = useUnAuthHeaderNav()
 let isLogin = ref(false)
 
 function toggleLoginPopup() {
+  isRegistr.value = false
   isLogin.value = !isLogin.value
 }
 
 let isRegistr = ref(false)
 
 function toggleRegistrationPopup() {
+  isLogin.value = false
   isRegistr.value = !isRegistr.value
 }
+
 </script>
 
 <template>
@@ -44,8 +47,8 @@ function toggleRegistrationPopup() {
               disabled="disabled"
               ><Typography size="m" bold tag="span">SignUp</Typography>
             </Button>
-            <div class="reg-popup" >
-              <RegistrationPopup v-if="isRegistr" :toggleLoginPopup="toggleLoginPopup"/>
+            <div class="reg-popup">
+              <RegistrationPopup v-if="isRegistr" :toggleLoginPopup="toggleLoginPopup" />
             </div>
           </div>
         </div>

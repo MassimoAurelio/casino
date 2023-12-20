@@ -23,6 +23,9 @@
   --mc-skip-btn-bg: #c4c4c4;
   --field-error-border-color: #c90726;
   --form-text-link-color: #7f6bc8;
+  --field-input-color: #193737;
+  --field-input-border-color-active: #56b9b8;
+  --form-title-color: #193737;
 
   /* shadows */
   --shadow-default-xs: 1px 2px 4px 0px rgba(0, 0, 0, 0.1);

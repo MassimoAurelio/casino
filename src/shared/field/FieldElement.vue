@@ -55,9 +55,7 @@ const { disabled = false, size = 'm', placeholder = ''} = props
 }
 
 .field__input:focus {
-  border: 1px solid var(--main-secondary);
-  box-shadow: var(--shadow-secondary-m);
-  caret-color: var(--main-secondary);
+  border: 2px solid var(--field-input-border-color-active);
 }
 
 .field__input:disabled {

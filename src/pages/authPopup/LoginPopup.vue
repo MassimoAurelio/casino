@@ -2,6 +2,7 @@
 import { ref, defineProps } from 'vue'
 import ModalWindow from '@/shared/modal/modalWindow.vue'
 import ModalOverlay from '@/shared/modalOverlay/ModalOverlay.vue'
+import RestorePopup from '@/pages/restorePopup'
 import Field from '@/shared/field'
 import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'
@@ -15,6 +16,13 @@ let isOpen = ref(true)
 
 function togglePopup() {
   isOpen.value = !isOpen.value
+}
+
+let isRestore = ref(false)
+
+function toggleRestorePopup() {
+  isOpen.value = false
+  isRestore.value = !isRestore.value
 }
 </script>
 
@@ -63,28 +71,17 @@ function togglePopup() {
               <Typography tag="span" color="link">SignUp</Typography>
             </div>
           </div>
-          <div class="restore-btn">
+          <div class="restore-btn" @click="toggleRestorePopup">
             <Typography tag="span" color="link">Restore Password</Typography>
           </div>
         </div>
       </template>
     </ModalWindow>
   </ModalOverlay>
+  <RestorePopup v-if="isRestore" />
 </template>
 
 <style scoped>
-/* .popup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: auto;
-  border-radius: 15px;
-  gap: 15px;
-  background-color: var(--grayscale-lightest);
-} */
-
 .close-button {
   width: 30px;
   height: 30px;
@@ -105,7 +102,7 @@ function togglePopup() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   width: 100%;
   height: 100%;
 }

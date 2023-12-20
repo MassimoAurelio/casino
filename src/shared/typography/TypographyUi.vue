@@ -77,7 +77,7 @@ const props = defineProps<Props>()
   color: var(--main-surface);
 }
 .color_black {
-  color: var(--base-body-bg);
+  color: var(--form-title-color);
 }
 
 .color_link {
