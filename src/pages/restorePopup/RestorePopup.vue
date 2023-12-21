@@ -33,6 +33,7 @@ function toggleRestorePopup() {
           <Button size="medium">Restore</Button>
         </div>
       </div>
+      
     </ModalWindow>
   </ModalOverlay>
 </template>
