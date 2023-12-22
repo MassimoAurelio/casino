@@ -22,7 +22,6 @@ function toggleRegistrationPopup() {
   isLogin.value = false
   isRegistr.value = !isRegistr.value
 }
-
 </script>
 
 <template>
@@ -50,6 +49,11 @@ function toggleRegistrationPopup() {
             <div class="reg-popup">
               <RegistrationPopup v-if="isRegistr" :toggleLoginPopup="toggleLoginPopup" />
             </div>
+          </div>
+          <div class="burger-btn">
+            <Button size="small" color="primary" decoration="default" disabled="disabled"
+              ><img src="@/app/assets/svg/burger-btn.svg" alt="burger-btn" />
+            </Button>
           </div>
         </div>
         <div class="header_navigation">
@@ -85,7 +89,7 @@ function toggleRegistrationPopup() {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   gap: 5px;
   width: 100%;
   margin-top: 2%;
@@ -138,5 +142,11 @@ function toggleRegistrationPopup() {
 
 .navigation-button:not(:last-child) {
   border-right: 1px solid #363636;
+}
+
+@media screen and (max-width: 776px) {
+  .header_navigation {
+    display: none;
+  }
 }
 </style>

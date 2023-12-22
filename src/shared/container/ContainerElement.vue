@@ -4,13 +4,27 @@
 
 <style scoped>
 .container {
-  max-width: 1208px;
+  max-width: 1970px;
   margin: 0 auto;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
-@media screen and (max-width: 1207px) {
+@media screen and (max-width: 1439.99px) {
   .container {
-    max-width: 768px;
+    max-width: 980px;
+    padding-left: unset;
+    padding-right: unset;
   }
 }
+
+@media screen and (max-width: 993px) {
+  .container {
+    max-width: 760px;
+    padding-left: unset;
+    padding-right: unset;
+  }
+}
+
+
 </style>

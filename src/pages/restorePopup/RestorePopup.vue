@@ -9,9 +9,11 @@ import Typography from '@/shared/typography/TypographyUi.vue'
 
 let isRestore = ref(false)
 
+
 function toggleRestorePopup() {
   isRestore.value = !isRestore.value
 }
+
 </script>
 
 <template>
@@ -28,12 +30,16 @@ function toggleRestorePopup() {
         </div>
       </template>
       <div class="login-fields">
-        <Field class="emeil-input" size="m" placeholder="Email" />
+        <Field class="email-input" size="m" placeholder="Email"/>
+        
         <div class="logIn-btn">
-          <Button size="medium">Restore</Button>
+          <Button
+            size="medium"
+            type="submit"
+            >Restore</Button
+          >
         </div>
       </div>
-      
     </ModalWindow>
   </ModalOverlay>
 </template>
@@ -54,6 +60,7 @@ function toggleRestorePopup() {
   justify-content: space-between;
   align-items: center;
 }
+
 .login-fields {
   display: flex;
   flex-direction: column;
@@ -64,7 +71,7 @@ function toggleRestorePopup() {
   height: 100%;
 }
 
-.emeil-input,
+.email-input,
 .password-input {
   width: 100%;
 }
