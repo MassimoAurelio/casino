@@ -32,7 +32,6 @@ function toggleRegistrationPopup() {
           <div class="header_login-btn">
             <Button @click="toggleLoginPopup" size="medium" color="primary" decoration="default"
               ><Typography size="m" bold tag="span">LogIn</Typography></Button
-              
             >
             <div class="login-popup">
               <LoginPopup v-if="isLogin" :toggleRegistrationPopup="toggleRegistrationPopup" />
