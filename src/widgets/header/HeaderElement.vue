@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useUnAuthHeaderNav } from '@/app/stores/useHeaderNav'
+import { useScreenStore } from '@/app/stores/useScreenStore'
 import Container from '@/shared/container/ContainerElement.vue'
 import Button from '@/shared/button'
 import Typography from '@/shared/typography/TypographyUi.vue'
 import LoginPopup from '@/pages/authPopup'
 import RegistrationPopup from '@/pages/registrationPopup'
+import Burger from '@/widgets/burger'
 
 const headerNavStore = useUnAuthHeaderNav()
+const screenStore = useScreenStore()
 
 let isLogin = ref(false)
+let isBurger = ref(true)
 
 function toggleLoginPopup() {
   isRegistr.value = false
@@ -28,6 +32,14 @@ function toggleRegistrationPopup() {
   <header class="header_main">
     <div class="first">
       <Container class="header_container">
+        <div class="burger-btn" v-if="screenStore.platform === 'mobile'">
+          <Button size="small" color="primary" decoration="default" disabled="disabled">
+            <img src="@/app/assets/svg/burger-btn.svg" alt="burger-btn" />
+          </Button>
+        </div>
+        <div class="burger-menu" v-if="isBurger">
+          <Burger> </Burger>
+        </div>
         <div class="auth-btn">
           <div class="header_login-btn">
             <Button @click="toggleLoginPopup" size="medium" color="primary" decoration="default"
@@ -49,11 +61,6 @@ function toggleRegistrationPopup() {
             <div class="reg-popup">
               <RegistrationPopup v-if="isRegistr" :toggleLoginPopup="toggleLoginPopup" />
             </div>
-          </div>
-          <div class="burger-btn">
-            <Button size="small" color="primary" decoration="default" disabled="disabled"
-              ><img src="@/app/assets/svg/burger-btn.svg" alt="burger-btn" />
-            </Button>
           </div>
         </div>
         <div class="header_navigation">
@@ -85,6 +92,14 @@ function toggleRegistrationPopup() {
   height: 142px;
 }
 
+.burger-menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.burger-menu.active {
+  display: block;
+}
 .auth-btn {
   display: flex;
   flex-direction: row;
@@ -147,6 +162,20 @@ function toggleRegistrationPopup() {
 @media screen and (max-width: 776px) {
   .header_navigation {
     display: none;
+  }
+  .header_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 62px;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .auth-btn {
+    margin-top: unset;
+    width: 100%;
   }
 }
 </style>

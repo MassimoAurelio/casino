@@ -7,6 +7,7 @@ interface Props {
   decoration?: 'default' | 'outline' | 'none'
   size: 'small' | 'medium' | 'big'
   text?: string
+  withText?: boolean
 }
 
 const props = defineProps<Props>()
