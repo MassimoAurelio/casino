@@ -13,18 +13,23 @@ const headerNavStore = useUnAuthHeaderNav()
 const screenStore = useScreenStore()
 
 let isLogin = ref(false)
-let isBurger = ref(true)
+let isBurger = ref(false)
+let isRegistr = ref(false)
 
 function toggleLoginPopup() {
   isRegistr.value = false
   isLogin.value = !isLogin.value
 }
 
-let isRegistr = ref(false)
-
 function toggleRegistrationPopup() {
   isLogin.value = false
+  isBurger.value = false
   isRegistr.value = !isRegistr.value
+}
+
+function toggleBurgerMenu() {
+  console.log('Burger button clicked')
+  isBurger.value = !isBurger.value
 }
 </script>
 
@@ -33,12 +38,18 @@ function toggleRegistrationPopup() {
     <div class="first">
       <Container class="header_container">
         <div class="burger-btn" v-if="screenStore.platform === 'mobile'">
-          <Button size="small" color="primary" decoration="default" disabled="disabled">
+          <Button
+            @click="toggleBurgerMenu"
+            size="small"
+            color="primary"
+            decoration="default"
+            disabled="disabled"
+          >
             <img src="@/app/assets/svg/burger-btn.svg" alt="burger-btn" />
           </Button>
         </div>
-        <div class="burger-menu" v-if="isBurger">
-          <Burger> </Burger>
+        <div class="burger-menu">
+          <Burger v-if="isBurger" :toggleRegistrationPopup="toggleRegistrationPopup" />
         </div>
         <div class="auth-btn">
           <div class="header_login-btn">
@@ -92,14 +103,6 @@ function toggleRegistrationPopup() {
   height: 142px;
 }
 
-.burger-menu {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.burger-menu.active {
-  display: block;
-}
 .auth-btn {
   display: flex;
   flex-direction: row;

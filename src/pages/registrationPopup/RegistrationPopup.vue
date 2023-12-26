@@ -11,10 +11,10 @@ const props = defineProps({
   toggleLoginPopup: Function
 })
 
-let isOpen = ref(true)
+let isClose = ref(true)
 
 function togglePopup() {
-  isOpen.value = !isOpen.value
+  isClose.value = !isClose.value
 }
 </script>
 
@@ -78,7 +78,6 @@ function togglePopup() {
 </template>
 
 <style scoped>
-
 .close-button {
   width: 30px;
   height: 30px;
