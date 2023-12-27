@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useBurgerMenu } from '@/app/stores/useBurgerNav'
-import Avatar from '@/app/assets/svg/avatar.svg'
 import Container from '@/shared/container'
 import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'
@@ -24,7 +23,7 @@ function toggleBurger() {
     <div class="main-container">
       <div class="profile-menu">
         <div class="close-container">
-          <div class="close">
+          <div class="close-burger">
             <Button @click="toggleBurger" size="small">
               <img :src="Close" alt="close" />
             </Button>
@@ -71,7 +70,8 @@ function toggleBurger() {
   justify-content: flex-end;
 }
 
-.close {
+.close-burger {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;

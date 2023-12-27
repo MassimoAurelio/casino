@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, computed } from 'vue'
 import ModalWindow from '@/shared/modal/modalWindow.vue'
 import ModalOverlay from '@/shared/modalOverlay/ModalOverlay.vue'
 import RestorePopup from '@/pages/restorePopup'
@@ -7,6 +7,8 @@ import Field from '@/shared/field'
 import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'
 import Typography from '@/shared/typography/TypographyUi.vue'
+import OpenEye from '@/app/assets/svg/eye.svg'
+import CloseEye from '@/app/assets/svg/eye-close.svg'
 
 const props = defineProps({
   toggleRegistrationPopup: Function
@@ -24,6 +26,13 @@ function toggleRestorePopup() {
   isOpen.value = false
   isRestore.value = !isRestore.value
 }
+
+let showPassword = ref(false)
+
+const passwordIconPath = computed(() => (showPassword.value ? OpenEye : CloseEye))
+function togglePasswordVisibility() {
+  showPassword.value = !showPassword.value
+}
 </script>
 
 <template>
@@ -39,30 +48,22 @@ function toggleRestorePopup() {
           </div>
         </div>
       </template>
-      <div class="login-fields">
+      <form  class="login-fields">
         <Field class="emeil-input" size="m" placeholder="Email" />
-        <Field class="password-input" size="m" placeholder="Password"
-          ><template #rightIcon>
-            <svg
-              width="20px"
-              height="20px"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.99902 3L20.999 21M9.8433 9.91364C9.32066 10.4536 8.99902 11.1892 8.99902 12C8.99902 13.6569 10.3422 15 11.999 15C12.8215 15 13.5667 14.669 14.1086 14.133M6.49902 6.64715C4.59972 7.90034 3.15305 9.78394 2.45703 12C3.73128 16.0571 7.52159 19 11.9992 19C13.9881 19 15.8414 18.4194 17.3988 17.4184M10.999 5.04939C11.328 5.01673 11.6617 5 11.9992 5C16.4769 5 20.2672 7.94291 21.5414 12C21.2607 12.894 20.8577 13.7338 20.3522 14.5"
-                stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg> </template
-        ></Field>
+        <Field class="password-input" size="m" placeholder="Password">
+          <template #rightIcon>
+            <img
+              v-if="passwordIconPath"
+              @click="togglePasswordVisibility"
+              :src="passwordIconPath"
+              alt=""
+            />
+          </template>
+        </Field>
         <div class="logIn-btn">
           <Button size="medium">Submit</Button>
         </div>
-      </div>
+      </form >
       <template v-slot:footer>
         <div class="footer">
           <div class="to_registration">
@@ -82,6 +83,14 @@ function toggleRestorePopup() {
 </template>
 
 <style scoped>
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.error-message {
+  color: red;
+}
 .close-button {
   width: 30px;
   height: 30px;
