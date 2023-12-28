@@ -3,7 +3,7 @@ import { ref, defineProps, computed } from 'vue'
 import ModalWindow from '@/shared/modal/modalWindow.vue'
 import ModalOverlay from '@/shared/modalOverlay/ModalOverlay.vue'
 import RestorePopup from '@/pages/restorePopup'
-import Field from '@/shared/field'
+import Fields from '@/shared/field'
 import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'
 import Typography from '@/shared/typography/TypographyUi.vue'
@@ -30,6 +30,7 @@ function toggleRestorePopup() {
 let showPassword = ref(false)
 
 const passwordIconPath = computed(() => (showPassword.value ? OpenEye : CloseEye))
+
 function togglePasswordVisibility() {
   showPassword.value = !showPassword.value
 }
@@ -48,22 +49,22 @@ function togglePasswordVisibility() {
           </div>
         </div>
       </template>
-      <form  class="login-fields">
-        <Field class="emeil-input" size="m" placeholder="Email" />
-        <Field class="password-input" size="m" placeholder="Password">
+      <form class="login-fields">
+        <Fields class="email-input" size="m" placeholder="Email" />
+        <Fields class="password-input" size="m" placeholder="Password">
           <template #rightIcon>
             <img
               v-if="passwordIconPath"
               @click="togglePasswordVisibility"
               :src="passwordIconPath"
-              alt=""
+              alt="eye"
             />
           </template>
-        </Field>
+        </Fields>
         <div class="logIn-btn">
-          <Button size="medium">Submit</Button>
+          <Button type="submit" size="medium">Submit</Button>
         </div>
-      </form >
+      </form>
       <template v-slot:footer>
         <div class="footer">
           <div class="to_registration">
@@ -83,7 +84,6 @@ function togglePasswordVisibility() {
 </template>
 
 <style scoped>
-
 .is-invalid {
   border: 1px solid red;
 }
@@ -116,7 +116,7 @@ function togglePasswordVisibility() {
   height: 100%;
 }
 
-.emeil-input,
+.email-input,
 .password-input {
   width: 100%;
 }

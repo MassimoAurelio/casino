@@ -88,6 +88,8 @@ function toggleBurgerMenu() {
 </template>
 
 <style scoped>
+
+
 .header_main {
   background: var(--header-bg);
 }
