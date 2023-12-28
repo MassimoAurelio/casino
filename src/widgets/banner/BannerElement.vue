@@ -7,34 +7,45 @@ import Typography from '@/shared/typography/TypographyUi.vue'
 </script>
 
 <template>
-  <Container>
-    <section>
+  <section class="section">
+    <Container>
       <div class="slider">
         <Swiper :slides-per-view="1" :space-between="50" :loop="true" :speed="1300" class="swiper">
-          <SwiperSlide class="swiper"
-            ><img :src="BannerImg" alt="banner" />
+          <SwiperSlide class="swiper">
+            <img :src="BannerImg" alt="banner" />
             <div class="banner-text">
-              <Typography tag="h2" color="white">Ваш текст на баннере</Typography>
-            </div></SwiperSlide
-          >
-          <SwiperSlide class="swiper"
-            ><img :src="BannerImg" alt="banner" />
+              <Typography tag="h1" bold color="white">Первый баннер</Typography>
+              <Typography tag="p" color="white">Первый баннер</Typography>
+              <Typography tag="p" color="white">Первый баннер</Typography>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide class="swiper">
+            <img :src="BannerImg" alt="banner" />
             <div class="banner-text">
-              <Typography tag="h2" color="white">Ваш текст на баннере</Typography>
-            </div></SwiperSlide
-          ><SwiperSlide class="swiper"
-            ><img :src="BannerImg" alt="banner" />
+              <Typography tag="h1" bold color="white">Первый баннер</Typography>
+              <Typography tag="p" color="white">Первый баннер</Typography>
+              <Typography tag="p" color="white">Первый баннер</Typography>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide class="swiper">
+            <img :src="BannerImg" alt="banner" />
             <div class="banner-text">
-              <Typography tag="h2" color="white">Ваш текст на баннере</Typography>
-            </div></SwiperSlide
-          >
+              <Typography tag="h1" bold color="white">Первый баннер</Typography>
+              <Typography tag="p" color="white">Первый баннер</Typography>
+              <Typography tag="p" color="white">Первый баннер</Typography>
+            </div>
+          </SwiperSlide>
         </Swiper>
       </div>
-    </section>
-  </Container>
+    </Container>
+  </section>
 </template>
 
 <style scoped>
+.section {
+  width: 100%;
+  background: var(--grayscale-hardest);
+}
 .slider {
   padding: 50px 0;
   z-index: 1;
@@ -47,15 +58,13 @@ import Typography from '@/shared/typography/TypographyUi.vue'
 }
 
 .banner-text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  justify-content: center;
+  width: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 0;
+  transform: translate(0, -50%);
+  text-align: left;
+  padding-left: 3%;
+  padding-right: 3%;
 }
 </style>
