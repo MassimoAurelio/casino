@@ -11,6 +11,7 @@ const props = defineProps({
 })
 
 const burgerStore = useBurgerMenu()
+
 let isOpen = ref(true)
 
 function toggleBurger() {

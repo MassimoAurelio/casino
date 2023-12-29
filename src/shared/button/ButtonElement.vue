@@ -3,9 +3,9 @@ import { useSlots } from 'vue'
 import Typography from '../typography/TypographyUi.vue'
 
 interface Props {
-  color?: 'primary' | 'secondary' | 'erorr' | 'greyscale' | 'link' | 'transparent'
+  color?: 'primary' | 'secondary' | 'erorr' | 'greyscale' | 'link' | 'transparent' | 'white'
   decoration?: 'default' | 'outline' | 'none'
-  size: 'small' | 'medium' | 'big'
+  size?: 'small' | 'medium' | 'big'
   text?: string
   withText?: boolean
 }
@@ -18,15 +18,13 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
 </script>
 
 <template>
-  <div>
-    <button :class="classes">
-      <slot name="leftIcon"> </slot>
-      <Typography v-if="slots.default" class="button__text" tag="p" size="s" bold
-        ><slot> </slot
-      ></Typography>
-      <slot name="rightIcon"> </slot>
-    </button>
-  </div>
+  <button :class="classes">
+    <slot name="leftIcon"> </slot>
+    <Typography v-if="slots.default" class="button__text" tag="p" size="s" bold
+      ><slot> </slot
+    ></Typography>
+    <slot name="rightIcon"> </slot>
+  </button>
 </template>
 
 <style scoped>
@@ -35,7 +33,6 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
   align-items: center;
   border: none;
   width: 100%;
-  border-radius: 4px;
   cursor: pointer;
 }
 
@@ -53,6 +50,11 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
   background-color: var(--main-secondary);
   color: var(--main-on-primary);
 }
+
+.button.color_white {
+  background-color: var(--main-surface);
+  color: var(--base-body-bg);
+}
 .button.color_secondary {
   background-color: var(--main-primary);
   color: var(--main-surface);
@@ -61,7 +63,7 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
   color: blue;
 }
 
-.button.color_transparent{
+.button.color_transparent {
   background-color: var(--main-surface);
 }
 

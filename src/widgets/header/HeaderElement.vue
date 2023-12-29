@@ -17,18 +17,19 @@ let isBurger = ref(false)
 let isRegistr = ref(false)
 
 function toggleLoginPopup() {
+  console.log("LOGIN")
   isRegistr.value = false
   isLogin.value = !isLogin.value
 }
 
 function toggleRegistrationPopup() {
+  console.log("REGA")
   isLogin.value = false
-  isBurger.value = false
   isRegistr.value = !isRegistr.value
 }
 
 function toggleBurgerMenu() {
-  console.log('Burger button clicked')
+  console.log("BURGER")
   isBurger.value = !isBurger.value
 }
 </script>
@@ -88,8 +89,6 @@ function toggleBurgerMenu() {
 </template>
 
 <style scoped>
-
-
 .header_main {
   background: var(--header-bg);
 }
