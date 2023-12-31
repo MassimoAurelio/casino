@@ -57,5 +57,6 @@ function toggleProviders() {
 .button {
   border: 1px solid var(--grayscale-hard);
   border-radius: 8px;
+  
 }
 </style>

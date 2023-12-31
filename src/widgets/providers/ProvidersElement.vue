@@ -7,7 +7,7 @@ const storeProviders = useProviders()
 </script>
 
 <template>
-  <Container>
+  <Container class="container">
     <div class="provider-container">
       <div class="provider-item" v-for="item in storeProviders.items" :key="item.label">
         <img :src="item.icon" alt="" />
@@ -18,6 +18,11 @@ const storeProviders = useProviders()
 </template>
 
 <style scoped>
+
+.container{
+  padding-left: unset;
+  padding-right: unset;
+}
 .provider-container {
   display: flex;
   flex-direction: row;
