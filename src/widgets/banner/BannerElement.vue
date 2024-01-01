@@ -8,7 +8,7 @@ import Typography from '@/shared/typography/TypographyUi.vue'
 
 <template>
   <section class="section">
-    <Container>
+    <Container class="container">
       <div class="slider">
         <Swiper :slides-per-view="1" :space-between="50" :loop="true" :speed="1300" class="swiper">
           <SwiperSlide class="swiper">
@@ -66,5 +66,15 @@ import Typography from '@/shared/typography/TypographyUi.vue'
   text-align: left;
   padding-left: 3%;
   padding-right: 3%;
+}
+
+@media screen and (max-width: 776px) {
+  .swiper{
+    border-radius: unset;
+  }
+  .container {
+    padding-left: unset;
+    padding-right: unset;
+  }
 }
 </style>

@@ -18,7 +18,22 @@ export const useProviders = defineStore('providers', {
       { label: '3oaks', icon: gift },
       { label: '3oaks', icon: games },
       { label: '3oaks', icon: tourney },
-      { label: '3oaks', icon: support }
+      { label: '3oaks', icon: support },
+      { label: '3oaks', icon: home },
+      { label: '3oaks', icon: gift },
+      { label: '3oaks', icon: games },
+      { label: '3oaks', icon: tourney },
+      { label: '3oaks', icon: home },
+      { label: '3oaks', icon: gift },
+      { label: '3oaks', icon: games },
+      { label: '3oaks', icon: tourney },
+      { label: '3oaks', icon: home },
+      { label: '3oaks', icon: gift },
+      { label: '3oaks', icon: games },
+      { label: '3oaks', icon: tourney },
+      { label: '3oaks', icon: home },
+      { label: '3oaks', icon: gift },
+      { label: '3oaks', icon: games }
     ] as Store[]
   })
 })

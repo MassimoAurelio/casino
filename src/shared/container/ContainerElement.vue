@@ -10,21 +10,21 @@
   padding-right: 8%;
 }
 
-@media screen and (max-width: 1439.99px) {
+/* @media screen and (max-width: 1439.99px) {
   .container {
-    max-width: 980px;
-    padding-left: unset;
-    padding-right: unset;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 6%;
+    padding-right: 6%;
   }
-}
+} */
 
 @media screen and (max-width: 993px) {
   .container {
     max-width: 760px;
-    padding-left: unset;
-    padding-right: unset;
+    margin: 0 auto;
+    padding-left: 6%;
+    padding-right: 6%;
   }
 }
-
-
 </style>

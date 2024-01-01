@@ -17,19 +17,19 @@ let isBurger = ref(false)
 let isRegistr = ref(false)
 
 function toggleLoginPopup() {
-  console.log("LOGIN")
+  console.log('LOGIN')
   isRegistr.value = false
   isLogin.value = !isLogin.value
 }
 
 function toggleRegistrationPopup() {
-  console.log("REGA")
+  console.log('REGA')
   isLogin.value = false
   isRegistr.value = !isRegistr.value
 }
 
 function toggleBurgerMenu() {
-  console.log("BURGER")
+  console.log('BURGER')
   isBurger.value = !isBurger.value
 }
 </script>
@@ -173,8 +173,8 @@ function toggleBurgerMenu() {
     justify-content: center;
     align-items: center;
     height: 62px;
-    padding-left: 4%;
-    padding-right: 4%;
+   /*  padding-left: 4%;
+    padding-right: 4%; */
   }
 
   .auth-btn {

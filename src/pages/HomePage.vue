@@ -14,7 +14,4 @@ import 'swiper/css'
 </template>
 
 <style scoped>
-main {
-  height: 1000px;
-}
 </style>
