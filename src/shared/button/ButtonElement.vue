@@ -12,7 +12,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const slots = useSlots()
-const { color = 'primary', decoration = 'default', size = 'M' } = props
+const { color = 'primary', decoration = 'default', size = 'small' } = props
 
 const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${color}`]
 </script>
