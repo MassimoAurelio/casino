@@ -37,8 +37,8 @@ const classes = ['button', `size_${size}`, `decoration_${decoration}`, `color_${
 }
 
 .size_small {
-  grid-gap: 6px;
-  padding: 6px;
+  grid-gap: 3px;
+  padding: 3px;
 }
 
 .size_medium {

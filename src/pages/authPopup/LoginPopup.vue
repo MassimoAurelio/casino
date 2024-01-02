@@ -147,4 +147,5 @@ function togglePasswordVisibility() {
   cursor: pointer;
   text-decoration: underline;
 }
+
 </style>

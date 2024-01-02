@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import { useBanner } from '@/app/stores/useBanner'
 import 'swiper/css'
 import Container from '@/shared/container/ContainerElement.vue'
 import BannerImg from '@/app/assets/svg/banner.webp'
 import Typography from '@/shared/typography/TypographyUi.vue'
+
+const bannerStore = useBanner()
 </script>
 
 <template>
@@ -11,28 +14,12 @@ import Typography from '@/shared/typography/TypographyUi.vue'
     <Container class="container">
       <div class="slider">
         <Swiper :slides-per-view="1" :space-between="50" :loop="true" :speed="1300" class="swiper">
-          <SwiperSlide class="swiper">
-            <img :src="BannerImg" alt="banner" />
+          <SwiperSlide class="swiper" v-for="item in bannerStore.items" :key="item.label">
+            <img :src="item.icon" alt="banner" />
             <div class="banner-text">
-              <Typography tag="h1" bold color="white">Первый баннер</Typography>
-              <Typography tag="p" color="white">Первый баннер</Typography>
-              <Typography tag="p" color="white">Первый баннер</Typography>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide class="swiper">
-            <img :src="BannerImg" alt="banner" />
-            <div class="banner-text">
-              <Typography tag="h1" bold color="white">Первый баннер</Typography>
-              <Typography tag="p" color="white">Первый баннер</Typography>
-              <Typography tag="p" color="white">Первый баннер</Typography>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide class="swiper">
-            <img :src="BannerImg" alt="banner" />
-            <div class="banner-text">
-              <Typography tag="h1" bold color="white">Первый баннер</Typography>
-              <Typography tag="p" color="white">Первый баннер</Typography>
-              <Typography tag="p" color="white">Первый баннер</Typography>
+              <Typography tag="h1" bold color="white">{{ item.label }}</Typography>
+              <Typography tag="p" color="white">{{ item.description }}</Typography>
+              <Typography tag="p" color="white">{{ item.description }}</Typography>
             </div>
           </SwiperSlide>
         </Swiper>
@@ -47,7 +34,7 @@ import Typography from '@/shared/typography/TypographyUi.vue'
   background: var(--grayscale-hardest);
 }
 .slider {
-  padding: 50px 0;
+  padding-top: 5%;
   z-index: 1;
 }
 
@@ -69,7 +56,7 @@ import Typography from '@/shared/typography/TypographyUi.vue'
 }
 
 @media screen and (max-width: 776px) {
-  .swiper{
+  .swiper {
     border-radius: unset;
   }
   .container {

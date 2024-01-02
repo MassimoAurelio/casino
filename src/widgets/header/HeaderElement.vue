@@ -96,6 +96,7 @@ function toggleBurgerMenu() {
 .first {
   position: relative;
 }
+
 .header_container {
   display: flex;
   flex-direction: column;
@@ -173,8 +174,6 @@ function toggleBurgerMenu() {
     justify-content: center;
     align-items: center;
     height: 62px;
-   /*  padding-left: 4%;
-    padding-right: 4%; */
   }
 
   .auth-btn {

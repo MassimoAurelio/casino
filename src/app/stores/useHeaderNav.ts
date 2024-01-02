@@ -37,3 +37,14 @@ export const useAuthHeaderNav = defineStore('header', {
     ] as navStore[]
   })
 })
+
+export const useMobileHeader = defineStore('mobileHeader', {
+  state: () => ({
+    items: [
+      { label: 'Promotion', icon: gift, href: '/promotion' },
+      { label: 'Games', icon: games, href: '/games' },
+      { label: 'Tournaments', icon: tourney, href: '/tournament' },
+      { label: 'Support', icon: support, href: '/support' }
+    ] as navStore[]
+  })
+})

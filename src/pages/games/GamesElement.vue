@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useScreenStore } from '@/app/stores/useScreenStore'
 import Typography from '@/shared/typography'
 import Container from '@/shared/container/ContainerElement.vue'
 import Section from '@/widgets/sections'
@@ -8,7 +9,9 @@ import Button from '@/shared/button'
 import PostImg from '@/app/assets/svg/post.svg'
 import ProvidersElement from '@/widgets/providers/ProvidersElement.vue'
 import GamesArray from '@/widgets/games'
+import MobileHeader from '@/widgets/header/mobileHeader/MobileHeader.vue'
 
+const screenStore = useScreenStore()
 let isProviders = ref(false)
 
 function toggleProviders() {
@@ -20,6 +23,9 @@ function toggleProviders() {
   <section>
     <Container>
       <div class="main">
+        <div class="mobile-header" v-if="screenStore.platform === 'mobile'">
+          <MobileHeader />
+        </div>
         <div class="main-h1">
           <Typography tag="h1" bold color="black">Главный заголовок главной страницы</Typography>
         </div>
@@ -47,12 +53,12 @@ function toggleProviders() {
 .main {
   display: flex;
   flex-direction: column;
-  gap: 5vh;
+  gap: 3vh;
 }
 
-.main-h1{
-padding-top: 5px;
-padding-bottom: 5px;
+.main-h1 {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .input-btn {

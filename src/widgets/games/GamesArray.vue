@@ -1,32 +1,48 @@
 <script setup lang="ts">
-import { useGames } from '@/app/stores/useGames'
-import UserImg from '@/app/assets/svg/user.svg'
+import { ref } from 'vue';
+import { useGames } from '@/app/stores/useGames';
 
-const gamesStore = useGames()
+const gamesStore = useGames();
+
+const isHovered = ref(Array(gamesStore.items.length).fill(false));
+
+const handleMouseOver = (index: number) => {
+  isHovered.value[index] = true;
+};
+
+const handleMouseOut = (index: number) => {
+  isHovered.value[index] = false;
+};
 </script>
 
 <template>
-    <div class="games-container">
-      <div class="games-item" v-for="item in gamesStore.items" :key="item.label">
-        <div class="img">
-          <img class="img-item" :src="item.icon" alt="" />
-          <div class="buttons" v-if="false">
-            <button>Play</button>
-            <a href="">Demo</a>
-          </div>
+  <div class="games-container">
+    <div class="games-item" v-for="(item, index) in gamesStore.items" :key="item.label">
+      <div class="img">
+        <img
+          class="img-item"
+          :class="{ 'img-item-hover': isHovered[index] }"
+          :src="item.icon"
+          alt="img"
+          @mouseover="() => handleMouseOver(index)"
+          @mouseout="() => handleMouseOut(index)"
+        />
+        <div class="buttons" v-if="false">
+          <button>Play</button>
+          <a href="">Demo</a>
         </div>
-        <div class="description">
-          <div class="game-name">{{ item.label }}</div>
-          <div>
+      </div>
+      <div class="description">
+        <div class="game-name">{{ item.label }}</div>
+        <div>
+          <div class="description-footer">
             <span class="amount">{{ item.amount }} $</span>
-            <span class="users">
-              <img :src="UserImg" alt="user" />
-              79
-            </span>
+            <span class="users"> 79 </span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
@@ -38,9 +54,12 @@ const gamesStore = useGames()
 }
 
 .games-item {
+  cursor: pointer;
   width: 100%;
   border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
+
 .img {
   height: 70px;
   width: 100%;
@@ -50,11 +69,31 @@ const gamesStore = useGames()
 .img-item {
   width: 100%;
   height: 100%;
+  transition: filter 0.3s ease;
+}
+
+.img-item-hover {
+  filter: blur(5px);
+}
+
+.description-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.users {
+  width: 20%;
+  justify-self: end;
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1vh;
   background-color: cadetblue;
+  height: 50px;
 }
 
 @media screen and (max-width: 776px) {

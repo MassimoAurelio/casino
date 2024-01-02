@@ -49,4 +49,5 @@
   gap: 15px;
   background-color: var(--grayscale-lightest);
 }
+
 </style>

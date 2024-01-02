@@ -40,12 +40,19 @@ import Field from '@/shared/field'
 }
 
 .field-container {
-  width: 300px;
+  min-width: 270px;
+  width: 300%;
 }
 
 .button {
   height: 30px;
   width: 30px;
   box-shadow: 5px 5px 5px rgba(0.1, 0.1, 0.1, 0.1);
+}
+
+@media screen and(min-width:776px) {
+  .field-container {
+  width: auto;
+}
 }
 </style>

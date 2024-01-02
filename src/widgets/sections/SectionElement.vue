@@ -41,11 +41,11 @@ function toggleBorder(index: number) {
   width: 100px;
 }
 
-
 ::v-deep Button {
   border-radius: 8px;
   padding: 5px;
-  height: 40px;
+  height: auto;
+  min-height: 57px;
   width: 100px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
