@@ -1,33 +1,45 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useGames } from '@/app/stores/useGames';
+import { ref } from 'vue'
+import { useGames } from '@/app/stores/useGames'
 
-const gamesStore = useGames();
+const gamesStore = useGames()
 
-const isHovered = ref(Array(gamesStore.items.length).fill(false));
+const isHovered = ref(Array(gamesStore.items.length).fill(false))
 
 const handleMouseOver = (index: number) => {
-  isHovered.value[index] = true;
-};
+  isHovered.value[index] = true
+}
 
 const handleMouseOut = (index: number) => {
-  isHovered.value[index] = false;
-};
+  isHovered.value[index] = false
+}
+
+const isShow = (index: number, show: boolean) => {
+  isHovered.value[index] = show
+}
 </script>
 
 <template>
   <div class="games-container">
-    <div class="games-item" v-for="(item, index) in gamesStore.items" :key="item.label">
-      <div class="img">
+    <div
+      class="games-item"
+      v-for="(item, index) in gamesStore.items"
+      :key="item.label"
+      @mouseover="() => handleMouseOver(index)"
+      @mouseout="() => handleMouseOut(index)"
+    >
+      <div
+        class="img"
+        @mouseover="() => isShow(index, true)"
+        @mouseout="() => isShow(index, false)"
+      >
         <img
           class="img-item"
           :class="{ 'img-item-hover': isHovered[index] }"
           :src="item.icon"
           alt="img"
-          @mouseover="() => handleMouseOver(index)"
-          @mouseout="() => handleMouseOut(index)"
         />
-        <div class="buttons" v-if="false">
+        <div class="buttons" v-show="isHovered[index]">
           <button>Play</button>
           <a href="">Demo</a>
         </div>
@@ -53,17 +65,38 @@ const handleMouseOut = (index: number) => {
   width: 100%;
 }
 
+.games-item:hover {
+  transform: translateY(-5px);
+}
+
+.button-hover {
+  transition: transform 0.3s ease;
+}
+
 .games-item {
   cursor: pointer;
   width: 100%;
   border-radius: 15px;
+  overflow: hidden;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .img {
+  position: relative;
   height: 70px;
   width: 100%;
   background-color: bisque;
+  overflow: hidden;
+}
+
+.buttons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .img-item {
@@ -73,7 +106,8 @@ const handleMouseOut = (index: number) => {
 }
 
 .img-item-hover {
-  filter: blur(5px);
+  filter: blur(3px);
+  transition: transform 0.3s ease;
 }
 
 .description-footer {
