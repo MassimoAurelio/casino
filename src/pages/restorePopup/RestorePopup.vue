@@ -7,23 +7,22 @@ import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'
 import Typography from '@/shared/typography/TypographyUi.vue'
 
-let isRestore = ref(false)
+let isOpen = ref(true)
 
-
-function toggleRestorePopup() {
-  isRestore.value = !isRestore.value
+function togglePopup() {
+  isOpen.value = !isOpen.value
 }
 
 </script>
 
 <template>
-  <ModalOverlay>
-    <ModalWindow>
+  <ModalOverlay v-if="isOpen">
+    <ModalWindow v-if="isOpen">
       <template v-slot:header>
         <div class="header-content">
           <Typography tag="h2" color="black">Restore Password</Typography>
           <div class="close-button">
-            <Button @click="toggleRestorePopup" size="small" color="transparent">
+            <Button @click="togglePopup" size="small" color="transparent">
               <img :src="Close" alt="close" />
             </Button>
           </div>

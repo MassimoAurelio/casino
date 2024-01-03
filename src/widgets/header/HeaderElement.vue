@@ -17,20 +17,19 @@ let isBurger = ref(false)
 let isRegistr = ref(false)
 
 function toggleLoginPopup() {
-  console.log('LOGIN')
-  isRegistr.value = false
   isLogin.value = !isLogin.value
+  isRegistr.value = false
 }
 
 function toggleRegistrationPopup() {
-  console.log('REGA')
-  isLogin.value = false
   isRegistr.value = !isRegistr.value
+  isLogin.value = false
 }
 
 function toggleBurgerMenu() {
-  console.log('BURGER')
   isBurger.value = !isBurger.value
+  isRegistr.value = false
+  isLogin.value = false
 }
 </script>
 
@@ -39,13 +38,7 @@ function toggleBurgerMenu() {
     <div class="first">
       <Container class="header_container">
         <div class="burger-btn" v-if="screenStore.platform === 'mobile'">
-          <Button
-            @click="toggleBurgerMenu"
-            size="small"
-            color="primary"
-            decoration="default"
-            disabled="disabled"
-          >
+          <Button @click="toggleBurgerMenu" size="small" color="primary" decoration="default">
             <img src="@/app/assets/svg/burger-btn.svg" alt="burger-btn" />
           </Button>
         </div>
@@ -67,7 +60,6 @@ function toggleBurgerMenu() {
               size="medium"
               color="primary"
               decoration="default"
-              disabled="disabled"
               ><Typography size="m" bold tag="span">SignUp</Typography>
             </Button>
             <div class="reg-popup">

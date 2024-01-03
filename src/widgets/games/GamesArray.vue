@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useGames } from '@/app/stores/useGames'
+import Button from '@/shared/button/ButtonElement.vue'
+import Typography from '@/shared/typography/TypographyUi.vue'
+import { useScreenStore } from '@/app/stores/useScreenStore'
 
 const gamesStore = useGames()
+const screenStore = useScreenStore()
 
 const isHovered = ref(Array(gamesStore.items.length).fill(false))
 
@@ -40,8 +44,10 @@ const isShow = (index: number, show: boolean) => {
           alt="img"
         />
         <div class="buttons" v-show="isHovered[index]">
-          <button>Play</button>
-          <a href="">Demo</a>
+          <div class="button-play">
+            <Button size="small"><Typography tag="span" bold size="l">Play</Typography></Button>
+          </div>
+          <a href=""><Typography tag="span" bold size="s">Demo</Typography></a>
         </div>
       </div>
       <div class="description">
@@ -75,7 +81,6 @@ const isShow = (index: number, show: boolean) => {
 
 .games-item {
   cursor: pointer;
-  width: 100%;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
@@ -83,7 +88,7 @@ const isShow = (index: number, show: boolean) => {
 
 .img {
   position: relative;
-  height: 70px;
+  height: 150px;
   width: 100%;
   background-color: bisque;
   overflow: hidden;
@@ -97,6 +102,12 @@ const isShow = (index: number, show: boolean) => {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.button-play {
+  width: 15vh;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .img-item {
@@ -126,25 +137,35 @@ const isShow = (index: number, show: boolean) => {
   flex-direction: column;
   justify-content: center;
   padding: 1vh;
-  background-color: cadetblue;
-  height: 50px;
+  background-color: azure;
+  height: 67px;
 }
 
-@media screen and (max-width: 776px) {
+@media screen and (max-width: 1440px) {
+  .img {
+    position: relative;
+    height: 110px;
+    width: 100%;
+    background-color: rgb(60, 104, 48);
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 840px) {
   .games-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2dvh;
+    grid-gap: 3vh;
     width: 100%;
   }
+}
 
-  @media screen and (max-width: 450px) {
-    .games-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 1vh;
-      width: 100%;
-    }
+@media screen and (max-width: 510px) {
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3vh;
+    width: 100%;
   }
 }
 </style>

@@ -20,14 +20,14 @@ function toggleProviders() {
 </script>
 
 <template>
-  <section>
+  <section class="section">
     <Container>
       <div class="main">
         <div class="mobile-header" v-if="screenStore.platform === 'mobile'">
           <MobileHeader />
         </div>
         <div class="main-h1">
-          <Typography tag="h1" bold color="black">Главный заголовок главной страницы</Typography>
+          <Typography tag="h1" bold color="white">Главный заголовок главной страницы</Typography>
         </div>
         <Section />
         <div class="input-btn">
@@ -55,6 +55,9 @@ function toggleProviders() {
   flex-direction: column;
   gap: 3vh;
 }
+.section {
+  background: var(--header-bg);
+}
 
 .main-h1 {
   padding-top: 5px;
@@ -70,5 +73,11 @@ function toggleProviders() {
 .button {
   border: 1px solid var(--grayscale-hard);
   border-radius: 8px;
+}
+
+@media screen and (max-width: 777px) {
+  .mobile-header {
+    margin-bottom: 5vh;
+  }
 }
 </style>

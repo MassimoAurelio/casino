@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useBanner } from '@/app/stores/useBanner'
 import 'swiper/css'
 import Container from '@/shared/container/ContainerElement.vue'
-import BannerImg from '@/app/assets/svg/banner.webp'
 import Typography from '@/shared/typography/TypographyUi.vue'
 
 const bannerStore = useBanner()
@@ -31,7 +30,7 @@ const bannerStore = useBanner()
 <style scoped>
 .section {
   width: 100%;
-  background: var(--grayscale-hardest);
+  background: black;
 }
 .slider {
   padding-top: 5%;
@@ -53,6 +52,13 @@ const bannerStore = useBanner()
   text-align: left;
   padding-left: 3%;
   padding-right: 3%;
+}
+@media screen and (max-width: 1440px) {
+  .swiper {
+    border-radius: 15px;
+    width: 100%;
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 776px) {

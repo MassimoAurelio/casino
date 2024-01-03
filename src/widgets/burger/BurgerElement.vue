@@ -48,7 +48,7 @@ function toggleBurger() {
         <div class="nav-containre">
           <a class="nav-item" :href="item.href" v-for="item in burgerStore.items" :key="item.label">
             <img class="nav-icon" :src="item.icon" alt="icon" />
-            <span>{{ item.label }}</span>
+            <Typography size="m" tag="span" color="white">{{ item.label }}</Typography>
           </a>
         </div>
       </nav>
@@ -98,7 +98,7 @@ function toggleBurger() {
 }
 
 .nav-containre {
-  background-color: aliceblue;
+  background-color: var(--header-bg);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -114,6 +114,6 @@ function toggleBurger() {
   gap: 5%;
   width: 100%;
   padding: 3%;
-  border-bottom: 2px solid rgb(224, 224, 224);
+  border-bottom: 2px solid #29294e;
 }
 </style>

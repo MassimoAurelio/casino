@@ -11,16 +11,16 @@ const props = defineProps({
   toggleLoginPopup: Function
 })
 
-let isClose = ref(true)
+let isOpen = ref(true)
 
 function togglePopup() {
-  isClose.value = !isClose.value
+  isOpen.value = !isOpen.value
 }
 </script>
 
 <template>
-  <ModalOverlay>
-    <ModalWindow>
+  <ModalOverlay v-if="isOpen">
+    <ModalWindow v-if="isOpen">
       <template v-slot:header>
         <div class="header-content">
           <Typography tag="h2" color="black">Grab your Welcome Offer!</Typography>
