@@ -81,3 +81,4 @@ function toggleProviders() {
   }
 }
 </style>
+@/widgets/games-array

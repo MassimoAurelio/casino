@@ -2,7 +2,7 @@
 import { ref, defineProps, computed } from 'vue'
 import ModalWindow from '@/shared/modal/modalWindow.vue'
 import ModalOverlay from '@/shared/modalOverlay/ModalOverlay.vue'
-import RestorePopup from '@/pages/restorePopup'
+import RestorePopup from '@/widgets/restorePopup'
 import Fields from '@/shared/field'
 import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'

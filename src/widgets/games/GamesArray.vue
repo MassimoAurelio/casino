@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useGames } from '@/app/stores/useGames'
 import Button from '@/shared/button/ButtonElement.vue'
 import Typography from '@/shared/typography/TypographyUi.vue'
-import { useScreenStore } from '@/app/stores/useScreenStore'
 
 const gamesStore = useGames()
-const screenStore = useScreenStore()
 
 const isHovered = ref(Array(gamesStore.items.length).fill(false))
+
+const maxItemsToShow = 30
+const visibleItems = ref(maxItemsToShow)
 
 const handleMouseOver = (index: number) => {
   isHovered.value[index] = true
@@ -21,13 +22,24 @@ const handleMouseOut = (index: number) => {
 const isShow = (index: number, show: boolean) => {
   isHovered.value[index] = show
 }
+
+const shouldShowLoadMoreButton = ref(false)
+
+onMounted(() => {
+  shouldShowLoadMoreButton.value = gamesStore.items.length > maxItemsToShow
+})
+
+const loadMore = () => {
+  visibleItems.value += maxItemsToShow
+  shouldShowLoadMoreButton.value = visibleItems.value < gamesStore.items.length
+}
 </script>
 
 <template>
   <div class="games-container">
     <div
       class="games-item"
-      v-for="(item, index) in gamesStore.items"
+      v-for="(item, index) in gamesStore.items.slice(0, visibleItems)"
       :key="item.label"
       @mouseover="() => handleMouseOver(index)"
       @mouseout="() => handleMouseOut(index)"
@@ -59,6 +71,9 @@ const isShow = (index: number, show: boolean) => {
           </div>
         </div>
       </div>
+    </div>
+    <div class="loadmore-btn" v-if="shouldShowLoadMoreButton">
+      <Button @click="loadMore" size="small"><Typography tag="span" bold size="l">Load More</Typography></Button>
     </div>
   </div>
 </template>

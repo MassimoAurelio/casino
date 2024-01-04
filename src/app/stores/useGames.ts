@@ -44,6 +44,21 @@ export const useGames = defineStore('games', {
       { label: 'cool_diamonds', icon: gift, amount: 1234, class: 'gift' },
       { label: 'mbl_riseofmerlin', icon: games, amount: 1234 },
       { label: 'mbl_lordofocean', icon: tourney, amount: 1234 },
+      { label: 'wild_wild_west', icon: support, amount: 1234 },
+      { label: 'bookofradeluxe', icon: home, amount: 1234, class: 'home' },
+      { label: 'cool_diamonds', icon: gift, amount: 1234, class: 'gift' },
+      { label: 'mbl_riseofmerlin', icon: BookOfRa, amount: 1234 },
+      { label: 'mbl_lordofocean', icon: BookOfRa, amount: 1234 },
+      { label: 'wild_wild_west', icon: BookOfRa, amount: 1234 },
+      { label: 'bookofradeluxe', icon: home, amount: 1234, class: 'home' },
+      { label: 'cool_diamonds', icon: gift, amount: 1234, class: 'gift' },
+      { label: 'mbl_riseofmerlin', icon: games, amount: 1234 },
+      { label: 'mbl_lordofocean', icon: tourney, amount: 1234 },
+      { label: 'wild_wild_west', icon: support, amount: 1234 },
+      { label: 'bookofradeluxe', icon: home, amount: 1234, class: 'home' },
+      { label: 'cool_diamonds', icon: gift, amount: 1234, class: 'gift' },
+      { label: 'mbl_riseofmerlin', icon: games, amount: 1234 },
+      { label: 'mbl_lordofocean', icon: tourney, amount: 1234 },
       { label: 'wild_wild_west', icon: support, amount: 1234 }
     ] as Store[]
   })
