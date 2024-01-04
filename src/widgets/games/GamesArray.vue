@@ -10,6 +10,7 @@ const isHovered = ref(Array(gamesStore.items.length).fill(false))
 
 const maxItemsToShow = 30
 const visibleItems = ref(maxItemsToShow)
+const shouldShowLoadMoreButton = ref(false)
 
 const handleMouseOver = (index: number) => {
   isHovered.value[index] = true
@@ -22,8 +23,6 @@ const handleMouseOut = (index: number) => {
 const isShow = (index: number, show: boolean) => {
   isHovered.value[index] = show
 }
-
-const shouldShowLoadMoreButton = ref(false)
 
 onMounted(() => {
   shouldShowLoadMoreButton.value = gamesStore.items.length > maxItemsToShow
@@ -72,8 +71,12 @@ const loadMore = () => {
         </div>
       </div>
     </div>
+  </div>
+  <div class="loadbtn-container">
     <div class="loadmore-btn" v-if="shouldShowLoadMoreButton">
-      <Button @click="loadMore" size="small"><Typography tag="span" bold size="l">Load More</Typography></Button>
+      <Button @click="loadMore" size="big" color="red"
+        ><Typography tag="span" bold size="l">Load More</Typography></Button
+      >
     </div>
   </div>
 </template>
@@ -154,6 +157,19 @@ const loadMore = () => {
   padding: 1vh;
   background-color: azure;
   height: 67px;
+}
+
+.loadbtn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.loadmore-btn {
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1440px) {

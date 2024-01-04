@@ -62,7 +62,7 @@ function togglePasswordVisibility() {
           </template>
         </Fields>
         <div class="logIn-btn">
-          <Button type="submit" size="medium">Submit</Button>
+          <Button class="sum-btn" type="submit" size="medium" color="red">Submit</Button>
         </div>
       </form>
       <template v-slot:footer>
@@ -126,6 +126,10 @@ function togglePasswordVisibility() {
   border-radius: 52px;
 }
 
+.sum-btn:hover {
+  background-color: var(--hover);
+}
+
 .to_registration {
   display: flex;
   flex-direction: row;
@@ -147,5 +151,4 @@ function togglePasswordVisibility() {
   cursor: pointer;
   text-decoration: underline;
 }
-
 </style>

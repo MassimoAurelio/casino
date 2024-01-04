@@ -22,4 +22,3 @@ export const useBurgerMenu = defineStore('burger', {
     ] as Store[]
   })
 })
-

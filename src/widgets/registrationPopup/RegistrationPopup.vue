@@ -55,7 +55,7 @@ function togglePopup() {
             </svg> </template
         ></Field>
         <div class="logIn-btn">
-          <Button size="medium">SignUp</Button>
+          <Button class="reg-btn" size="medium" color="red">SignUp</Button>
         </div>
       </div>
       <template v-slot:footer>
@@ -114,6 +114,10 @@ function togglePopup() {
 .logIn-btn {
   width: 100%;
   border-radius: 52px;
+}
+
+.reg-btn:hover{
+  background-color: var(--hover);
 }
 
 .to_registration {

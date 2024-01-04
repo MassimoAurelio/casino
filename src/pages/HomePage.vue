@@ -2,6 +2,7 @@
 import Header from '@/widgets/header/HeaderElement.vue'
 import Banner from '@/widgets/banner'
 import Games from '@/pages/games'
+import Footer from '@/widgets/footer/FooterElement.vue'
 import 'swiper/css'
 </script>
 
@@ -10,8 +11,8 @@ import 'swiper/css'
     <Header />
     <Banner />
     <Games />
+    <Footer />
   </main>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
