@@ -89,19 +89,16 @@ const loadMore = () => {
   width: 100%;
 }
 
-.games-item:hover {
-  transform: translateY(-5px);
-}
-
-.button-hover {
-  transition: transform 0.3s ease;
-}
-
 .games-item {
   cursor: pointer;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.games-item:hover {
+  transform: translateY(-5px);
 }
 
 .img {
@@ -120,6 +117,9 @@ const loadMore = () => {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+.button-hover {
+  transition: transform 0.3s ease;
 }
 
 .button-play {

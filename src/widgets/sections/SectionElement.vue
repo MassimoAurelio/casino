@@ -17,12 +17,12 @@ function toggleBorder(index: number) {
     <div class="main-section" v-for="(item, index) in sectionStore.items" :key="item.label">
       <div class="button-container">
         <Button
-          color="white"
+          color="blue"
           @click="() => toggleBorder(index)"
           :class="{ active: index === activeButtonIndex }"
         >
           <img :src="item.icon" alt="" />
-          <Typography tag="span" size="s" bold color="black">{{ item.label }}</Typography>
+          <Typography tag="span" size="s" bold color="white">{{ item.label }}</Typography>
         </Button>
       </div>
     </div>
@@ -34,7 +34,7 @@ function toggleBorder(index: number) {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 2%;
+  gap: 1vh;
 }
 
 .main-section {

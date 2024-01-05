@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import Header from '@/widgets/header/HeaderElement.vue'
+import Header from '@/widgets/header/'
 import Banner from '@/widgets/banner'
 import Games from '@/pages/games'
-import Footer from '@/widgets/footer/FooterElement.vue'
+import Footer from '@/widgets/footer/'
+import PromotionFooter from '@/widgets/promotion'
 import 'swiper/css'
 </script>
 
@@ -11,6 +12,7 @@ import 'swiper/css'
     <Header />
     <Banner />
     <Games />
+    <PromotionFooter />
     <Footer />
   </main>
 </template>
