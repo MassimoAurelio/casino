@@ -43,7 +43,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 500px;
   height: auto;
   border-radius: 15px;
   gap: 15px;

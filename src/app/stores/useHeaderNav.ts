@@ -15,7 +15,7 @@ export const useUnAuthHeaderNav = defineStore('header', {
   state: () => ({
     items: [
       { label: 'Home', icon: home, href: '/' },
-      { label: 'Promotion', icon: gift, href: '/promotion' },
+      { label: 'Promotion', icon: gift, href: '/offers' },
       { label: 'All Games', icon: games, href: '/games' },
       { label: 'Tournaments', icon: tourney, href: '/tournament' },
       { label: 'Support', icon: support, href: '/support' }

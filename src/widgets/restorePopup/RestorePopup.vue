@@ -29,12 +29,13 @@ function togglePopup() {
         </div>
       </template>
       <div class="login-fields">
-        <Field class="email-input" size="m" placeholder="Email"/>
+        <Field class="email-input" size="l" placeholder="Email"/>
         
         <div class="logIn-btn">
           <Button
-            size="medium"
+            size="big"
             type="submit"
+            color="red"
             >Restore</Button
           >
         </div>

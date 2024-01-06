@@ -6,12 +6,19 @@ import Field from '@/shared/field'
 import Button from '@/shared/button/ButtonElement.vue'
 import Close from '@/app/assets/svg/close.svg'
 import Typography from '@/shared/typography/TypographyUi.vue'
+import checkboxImg from '@/app/assets/svg/checkbox.svg'
 
 const props = defineProps({
   toggleLoginPopup: Function
 })
 
-let isOpen = ref(true)
+const checkBox = ref(false)
+
+function toggleCheckBox() {
+  checkBox.value = !checkBox.value
+}
+
+const isOpen = ref(true)
 
 function togglePopup() {
   isOpen.value = !isOpen.value
@@ -32,11 +39,11 @@ function togglePopup() {
         </div>
       </template>
       <div class="login-fields">
-        <Field class="emeil-input" size="m" placeholder="Email" />
-        <Field class="name-input" size="m" placeholder="Name" />
-        <Field class="surname-input" size="m" placeholder="Surname" />
-        <Field class="birth-input" size="m" placeholder="Date of birth (YYYY-MM-DD)" />
-        <Field class="password-input" size="m" placeholder="Password"
+        <Field class="emeil-input" size="l" placeholder="Email" />
+        <Field class="name-input" size="l" placeholder="Name" />
+        <Field class="surname-input" size="l" placeholder="Surname" />
+        <Field class="birth-input" size="l" placeholder="Date of birth (YYYY-MM-DD)" />
+        <Field class="password-input" size="l" placeholder="Password"
           ><template #rightIcon>
             <svg
               width="20px"
@@ -54,8 +61,30 @@ function togglePopup() {
               />
             </svg> </template
         ></Field>
+        <label class="checkbox-container">
+          <Field
+            class="checkbox"
+            size="l"
+            type="checkbox"
+            name="acceptTerms"
+            @click="toggleCheckBox"
+            style="display: none"
+          />
+          <span class="push-checkbox">
+            <img
+              :src="checkboxImg"
+              alt="checkbox"
+              style="max-width: 100%; max-height: 100%"
+              v-if="checkBox"
+            />
+          </span>
+          <Typography tag="span" color="black" size="s">
+            I accept the <a class="terms" href="#">Terms & Conditions</a> and confirm that I am over
+            18 years of age
+          </Typography>
+        </label>
         <div class="logIn-btn">
-          <Button class="reg-btn" size="medium" color="red">SignUp</Button>
+          <Button class="reg-btn" size="big" color="red">SignUp</Button>
         </div>
       </div>
       <template v-slot:footer>
@@ -93,6 +122,34 @@ function togglePopup() {
   justify-content: space-between;
   align-items: center;
 }
+
+.terms {
+  color: var(--form-text-link-color);
+}
+
+.push-checkbox {
+  align-items: center;
+  background: #fff;
+  border: 2px solid #dbdcee;
+  border-radius: 8px;
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  margin-right: 8px;
+  max-height: 32px;
+  max-width: 32px;
+  min-height: 32px;
+  min-width: 32px;
+  transition: background 0.2s ease;
+  width: 32px;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1vh;
+}
 .login-fields {
   display: flex;
   flex-direction: column;
@@ -116,7 +173,7 @@ function togglePopup() {
   border-radius: 52px;
 }
 
-.reg-btn:hover{
+.reg-btn:hover {
   background-color: var(--hover);
 }
 

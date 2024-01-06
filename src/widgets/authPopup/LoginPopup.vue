@@ -50,8 +50,8 @@ function togglePasswordVisibility() {
         </div>
       </template>
       <form class="login-fields">
-        <Fields class="email-input" size="m" placeholder="Email" />
-        <Fields class="password-input" size="m" placeholder="Password">
+        <Fields class="email-input" size="l" placeholder="Email" />
+        <Fields class="password-input" size="l" placeholder="Password">
           <template #rightIcon>
             <img
               v-if="passwordIconPath"
@@ -62,7 +62,7 @@ function togglePasswordVisibility() {
           </template>
         </Fields>
         <div class="logIn-btn">
-          <Button class="sum-btn" type="submit" size="medium" color="red">Submit</Button>
+          <Button class="sum-btn" type="submit" size="big" color="red">Submit</Button>
         </div>
       </form>
       <template v-slot:footer>

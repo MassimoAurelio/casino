@@ -5,11 +5,12 @@ interface Props {
   disabled?: boolean
   size?: 'm' | 'l'
   placeholder?: string
+  type?: string
 }
 
 const slots = useSlots()
 const props = defineProps<Props>()
-const { disabled = false, size = 'm', placeholder = ''} = props
+const { disabled = false, size = 'm', placeholder = '', type = 'text' } = props
 </script>
 
 <template>
@@ -24,15 +25,11 @@ const { disabled = false, size = 'm', placeholder = ''} = props
   >
     <slot name="label"></slot>
     <div class="field__container">
-      <div v-if="slots.leftIcon" class="field__left-icon" >
+      <div v-if="slots.leftIcon" class="field__left-icon">
         <slot name="leftIcon"></slot>
       </div>
-      <input
-        class="field__input"
-        type="text"
-        :placeholder="placeholder"
-        :disabled="disabled"
-      />
+      <input class="field__input" :type="type" :placeholder="placeholder" :disabled="disabled" />
+      <slot></slot>
       <div v-if="slots.rightIcon" class="field__right-icon">
         <slot name="rightIcon"></slot>
       </div>
@@ -84,7 +81,7 @@ const { disabled = false, size = 'm', placeholder = ''} = props
 }
 .field.size_l .field__input {
   padding: 12px 16px;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .field.left-icon_true.size_m .field__left-icon {

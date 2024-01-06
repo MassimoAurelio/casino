@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Header from '@/widgets/header/'
 import Banner from '@/widgets/banner'
 import Games from '@/pages/games'
 import Footer from '@/widgets/footer/'
@@ -9,7 +8,6 @@ import 'swiper/css'
 
 <template>
   <main>
-    <Header />
     <Banner />
     <Games />
     <PromotionFooter />
