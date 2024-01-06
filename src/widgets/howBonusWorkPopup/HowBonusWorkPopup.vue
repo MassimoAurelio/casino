@@ -6,7 +6,7 @@ import Promotion from '@/widgets/promotion'
 import ModalOverlay from '@/shared/modalOverlay'
 import Modal from '@/shared/modal'
 
-const isOpen = ref(false)
+const isOpen = ref(true)
 
 function togglePopup() {
   isOpen.value = !isOpen.value
@@ -14,8 +14,8 @@ function togglePopup() {
 </script>
 
 <template>
-  <ModalOverlay>
-    <Modal>
+  <ModalOverlay v-if="isOpen">
+    <Modal v-if="isOpen">
       <div>text</div>
       <Button @click="togglePopup" size="small" color="transparent"> close </Button>
     </Modal>

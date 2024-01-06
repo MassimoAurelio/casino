@@ -17,9 +17,9 @@ function togglePopup() {
     <Container>
       <Typography tag="h1" color="white">Promotions</Typography>
       <div class="how-bonus-work_link">
-        <Typography tag="span" color="white" @click="togglePopup">How do bonuses work?</Typography>
+        <Typography @click="togglePopup" tag="span" color="white">How do bonuses work?</Typography>
         <div class="popup">
-          <HowBonusWorkPopup/>
+          <HowBonusWorkPopup v-if="isOpen" />
         </div>
       </div>
       <div class="promotion-items">
@@ -34,5 +34,9 @@ function togglePopup() {
   padding-top: 5vh;
   min-height: 40vh;
   background-color: var(--header-bg);
+}
+
+.how-bonus-work_link{
+  cursor: pointer;
 }
 </style>
