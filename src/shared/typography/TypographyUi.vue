@@ -2,8 +2,8 @@
 interface Props {
   tag?: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' 
   bold?: boolean
-  size?: 'xs' | 's' | 'm' | 'l' | 'xl'
-  color?: 'white' | 'black' | 'red' | 'link'
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
+  color?: 'white' | 'black' | 'red' | 'link' | 'grey'
 }
 
 const props = defineProps<Props>()
@@ -48,9 +48,12 @@ const props = defineProps<Props>()
 .size_l {
   font-size: 24px;
 }
-
 .size_xl {
-  font-size: 36px;
+  font-size: 32px;
+}
+
+.size_xxl {
+  font-size: 40px;
 }
 
 .tag_h1 {
@@ -83,7 +86,9 @@ const props = defineProps<Props>()
 .color_link {
   color: var(--form-text-link-color);
 }
-
+.color_grey {
+  color: var(--offers-how-work-link-color);
+}
 
 
 </style>

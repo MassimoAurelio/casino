@@ -68,12 +68,17 @@ function toggleBurgerMenu() {
           </div>
         </div>
         <div class="header_navigation">
-          <nav class="navigation-button" v-for="item in headerNavStore.items" :key="item.label">
+          <a
+            class="navigation-button"
+            :href="item.href"
+            v-for="item in headerNavStore.items"
+            :key="item.label"
+          >
             <div class="button-value">
               <img :src="item.icon" alt="" />
-              <a class="navigation-link" :href="item.href"> {{ item.label }}</a>
             </div>
-          </nav>
+            <span>{{ item.label }}</span>
+          </a>
         </div>
       </Container>
     </div>
@@ -122,11 +127,13 @@ function toggleBurgerMenu() {
 
 .navigation-button {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--mc-skip-btn-bg);
   flex-grow: 1;
-  height: 100%;
+  min-height: 72px;
+  width: 100%;
   padding: 15px 0 13px;
 }
 

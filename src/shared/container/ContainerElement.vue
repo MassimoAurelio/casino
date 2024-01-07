@@ -6,8 +6,8 @@
 .container {
   max-width: 1970px;
   margin: 0 auto;
-  padding-left: 8%;
-  padding-right: 8%;
+  padding-left: 14%;
+  padding-right: 14%;
 }
 
 @media screen and (max-width: 1440px) {

@@ -34,6 +34,7 @@ const bannerStore = useBanner()
 }
 .slider {
   padding-top: 5%;
+  padding-bottom: 5%;
   z-index: 1;
 }
 

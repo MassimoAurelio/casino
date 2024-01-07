@@ -17,7 +17,7 @@ function togglePopup() {
     <Container>
       <Typography tag="h1" color="white">Promotions</Typography>
       <div class="how-bonus-work_link">
-        <Typography @click="togglePopup" tag="span" color="white">How do bonuses work?</Typography>
+        <Typography @click="togglePopup" tag="span" color="grey">How do bonuses work?</Typography>
         <div class="popup">
           <HowBonusWorkPopup v-if="isOpen" />
         </div>
@@ -32,12 +32,16 @@ function togglePopup() {
 <style scoped>
 .main-container {
   padding-top: 5vh;
+  padding-bottom: 5vh;
   min-height: 50vh;
   background-color: var(--header-bg);
 }
 
 .how-bonus-work_link {
   cursor: pointer;
+  text-decoration: underline;
+  user-select: none;
+  width: 20vh;
 }
 
 @media screen and(max-width: 840px) {
