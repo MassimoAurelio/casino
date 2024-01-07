@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import Container from '@/shared/container'
 import Typography from '@/shared/typography'
-import Promotion from '@/widgets/promotion'
-import HowBonusWorkPopup from '@/widgets/howBonusWorkPopup'
+import PromotionOfferPage from '@/widgets/promotionOfferPage'
+import HowBonusWorkPopup from '@/widgets/popups/howBonusWorkPopup'
 
 const isOpen = ref(false)
 
@@ -23,9 +23,8 @@ function togglePopup() {
         </div>
       </div>
       <div class="promotion-items">
-        <Promotion />
+        <PromotionOfferPage />
       </div>
-      
     </Container>
   </div>
 </template>
@@ -37,7 +36,11 @@ function togglePopup() {
   background-color: var(--header-bg);
 }
 
-.how-bonus-work_link{
+.how-bonus-work_link {
   cursor: pointer;
 }
+
+@media screen and(max-width: 840px) {
+}
 </style>
+@/widgets/promotionHomePage

@@ -1,17 +1,28 @@
 <script setup lang="ts">
+import { defineProps } from 'vue'
+import { usePromotion } from '@/app/stores/usePromotion'
 import Typography from '@/shared/typography'
 import Container from '@/shared/container'
-import { usePromotion } from '@/app/stores/usePromotion'
+
+interface Props {
+  title?: String
+  offerText: String
+  useContainer: Boolean
+}
+
+//НУЖНО БУДЕТ ПЕРЕРАБОТАТЬ КАК PromotionOfferPage
+
+const props = defineProps<Props>()
 
 const promotionStore = usePromotion()
 </script>
 
 <template>
-  <div class="main-container">
-    <Container>
+  <div :class="{ 'main-container': useContainer }">
+    <Container v-if="useContainer">
       <div class="contant-container">
-        <div>
-          <Typography tag="h2" bold>Promotions</Typography>
+        <div class="promotion-h2">
+          <Typography tag="h2" bold>{{ title }}</Typography>
         </div>
         <div class="offers-container">
           <div class="offers-item" v-for="item in promotionStore.items" :key="item.label">
@@ -23,7 +34,7 @@ const promotionStore = usePromotion()
                 <Typography tag="p" bold size="s">{{ item.text }}</Typography>
               </div>
               <div class="second_offers-text">
-                <Typography tag="p" size="m" bold>100% up to 500 AUD</Typography>
+                <Typography tag="p" size="m" bold>{{ offerText }}</Typography>
               </div>
             </div>
             <a :href="item.href" />

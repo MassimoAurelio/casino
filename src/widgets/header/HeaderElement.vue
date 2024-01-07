@@ -5,8 +5,8 @@ import { useScreenStore } from '@/app/stores/useScreenStore'
 import Container from '@/shared/container/ContainerElement.vue'
 import Button from '@/shared/button'
 import Typography from '@/shared/typography/TypographyUi.vue'
-import LoginPopup from '@/widgets/authPopup'
-import RegistrationPopup from '@/widgets/registrationPopup'
+import LoginPopup from '@/widgets/popups/authPopup'
+import RegistrationPopup from '@/widgets/popups/registrationPopup'
 import Burger from '@/widgets/burger'
 
 const headerNavStore = useUnAuthHeaderNav()

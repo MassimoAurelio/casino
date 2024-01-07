@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import Container from '@/shared/container'
 import Typography from '@/shared/typography'
-import Promotion from '@/widgets/promotion'
 import ModalOverlay from '@/shared/modalOverlay'
 import Modal from '@/shared/modal'
 
@@ -29,3 +28,4 @@ function togglePopup() {
   background-color: var(--header-bg);
 }
 </style>
+@/shared/promotion
