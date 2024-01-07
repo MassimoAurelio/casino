@@ -25,6 +25,7 @@ function togglePopup() {
       <div class="promotion-items">
         <Promotion />
       </div>
+      
     </Container>
   </div>
 </template>
@@ -32,7 +33,7 @@ function togglePopup() {
 <style scoped>
 .main-container {
   padding-top: 5vh;
-  min-height: 40vh;
+  min-height: 50vh;
   background-color: var(--header-bg);
 }
 
