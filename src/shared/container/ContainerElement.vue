@@ -12,13 +12,12 @@
 
 @media screen and (max-width: 1440px) {
   .container {
-    max-width: 960px;
+    max-width: 1439px;
     margin: 0 auto;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 14%;
+    padding-right: 14%;
   }
 }
-
 
 @media screen and (max-width: 761px) {
   .container {

@@ -47,4 +47,3 @@ function togglePopup() {
 @media screen and(max-width: 840px) {
 }
 </style>
-@/widgets/promotionHomePage

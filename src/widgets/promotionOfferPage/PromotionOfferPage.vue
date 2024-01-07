@@ -56,4 +56,21 @@ const promotionStore = usePromotion()
   min-height: 243px;
   padding: 2vh;
 }
+
+@media screen and (max-width: 980px) {
+  .items-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2vh;
+  }
+
+  .offers-item {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+  }
+}
 </style>

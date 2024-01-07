@@ -27,7 +27,7 @@ function togglePopup() {
 
 <template>
   <ModalOverlay v-if="isOpen">
-    <ModalWindow v-if="isOpen">
+    <ModalWindow width="auth" v-if="isOpen">
       <template v-slot:header>
         <div class="header-content">
           <Typography tag="h2" color="black">Grab your Welcome Offer!</Typography>
