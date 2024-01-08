@@ -12,7 +12,7 @@ const promotionStore = usePromotion()
       <div class="items-container">
         <div class="offers-item" v-for="item in promotionStore.items" :key="item.label">
           <div class="offers-img">
-            <img :src="item.icon" alt="icon" />
+            <img :src="item.icon" alt="icon" class="responsive-image" />
           </div>
           <div class="offers-description">
             <Typography tag="h3" bold size="xxl" color="white">{{ item.text }}</Typography>
@@ -42,8 +42,14 @@ const promotionStore = usePromotion()
 .offers-item:hover {
   transform: scale(1.02);
 }
-
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 .offers-img {
+  
   min-height: 240px;
   object-fit: cover;
   object-position: top center;

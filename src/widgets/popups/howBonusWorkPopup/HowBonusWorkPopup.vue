@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useScreenStore } from '@/app/stores/useScreenStore'
 import ModalOverlay from '@/shared/modalOverlay'
 import Modal from '@/shared/modal'
 import Img from '@/app/assets/svg/684x300.webp'
 import Typography from '@/shared/typography/TypographyUi.vue'
 import closeImg from '@/app/assets/svg/close-infoPopup.svg'
+
+const screenStore = useScreenStore()
 
 const isOpen = ref(true)
 
@@ -31,7 +34,6 @@ function togglePopup() {
             <Typography tag="span" size="l" color="white" bold>A bonus is free money</Typography>
           </div>
         </div>
-
         <div class="footer-content"></div>
       </div>
     </Modal>
@@ -69,7 +71,7 @@ function togglePopup() {
 }
 
 .top-content {
-  min-height: 420px;
+  min-height: 100vh;
   overflow: hidden;
   background-color: black;
 }
@@ -80,7 +82,40 @@ function togglePopup() {
 }
 
 .qq {
+  cursor: pointer;
   border: none;
   background-color: rgba(0, 0, 0, 0);
+}
+
+@media screen and (max-width: 700px) {
+  .modal {
+    padding: unset;
+  }
+
+  .modals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--header-bg);
+    z-index: 999;
+  }
+
+  .close-btn {
+    position: absolute;
+    padding-top: 1vh;
+    padding-right: 1vh;
+    right: 0;
+    top: 0;
+  }
+
+  .main-container {
+    width: 100%;
+    height: 100%;
+    border-radius: unset;
+    top: 0;
+    left: 0;
+  }
 }
 </style>

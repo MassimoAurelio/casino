@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 
+
 interface Props {
   width: 'auth' | 'info'
   height?: 'auth' | 'info'
@@ -13,7 +14,7 @@ const classes = [`width_${width}`, `height_${height}`]
 </script>
 
 <template>
-  <form class="modal popup" :class="classes">
+  <form class="modal popup" :class="classes" >
     <div class="modal_header">
       <slot name="header"></slot>
     </div>
@@ -55,7 +56,6 @@ const classes = [`width_${width}`, `height_${height}`]
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   height: auto;
   border-radius: 15px;
   gap: 15px;

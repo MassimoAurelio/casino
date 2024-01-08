@@ -41,7 +41,7 @@ function togglePopup() {
   cursor: pointer;
   text-decoration: underline;
   user-select: none;
-  width: 20vh;
+  width: 30vh;
 }
 
 @media screen and(max-width: 840px) {

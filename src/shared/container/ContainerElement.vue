@@ -21,7 +21,7 @@
 
 @media screen and (max-width: 761px) {
   .container {
-    max-width: 760px;
+    max-width: 730px;
     margin: 0 auto;
     padding-left: 3%;
     padding-right: 3%;
