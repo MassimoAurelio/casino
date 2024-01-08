@@ -11,7 +11,7 @@ export const useFooterLink = defineStore('footer', {
     items: [
       { label: 'Home', href: '/' },
       { label: 'Promotion', href: '/offers' },
-      { label: 'All Games', href: '/games' },
+      { label: 'Games', href: '#games' },
       { label: 'Tournaments', href: '/tourney' },
       { label: 'Support', href: '/support' },
       { label: 'Privacy Policy', href: '/privacy-policy' },

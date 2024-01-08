@@ -9,6 +9,7 @@ import LoginPopup from '@/widgets/popups/authPopup'
 import RegistrationPopup from '@/widgets/popups/registrationPopup'
 import Burger from '@/widgets/burger'
 
+
 const headerNavStore = useUnAuthHeaderNav()
 const screenStore = useScreenStore()
 

@@ -16,7 +16,7 @@ export const useUnAuthHeaderNav = defineStore('header', {
     items: [
       { label: 'Home', icon: home, href: '/' },
       { label: 'Promotion', icon: gift, href: '/offers' },
-      { label: 'All Games', icon: games, href: '/games' },
+      { label: 'All Games', icon: games, href: '/#game' },
       { label: 'Tournaments', icon: tourney, href: '/tournament' },
       { label: 'Support', icon: support, href: '/support' }
     ] as navStore[]
@@ -28,7 +28,7 @@ export const useAuthHeaderNav = defineStore('header', {
     items: [
       { label: 'Home', icon: 'home', href: '/' },
       { label: 'Promotion', icon: 'promotion', href: '/promotion' },
-      { label: 'All Games', icon: 'games', href: '/games' },
+      { label: 'All Games', icon: 'games', href: '#games' },
       { label: 'Tournament', icon: 'tournament', href: '/tournament' },
       { label: 'Withdraw', icon: 'withdraw', href: '/withdraw' },
       { label: 'History', icon: 'history', href: '/history' },
@@ -42,7 +42,7 @@ export const useMobileHeader = defineStore('mobileHeader', {
   state: () => ({
     items: [
       { label: 'Promotion', icon: gift, href: '/promotion' },
-      { label: 'Games', icon: games, href: '/games' },
+      { label: 'Games', icon: games, href: '#games' },
       { label: 'Tournaments', icon: tourney, href: '/tournament' },
       { label: 'Support', icon: support, href: '/support' }
     ] as navStore[]

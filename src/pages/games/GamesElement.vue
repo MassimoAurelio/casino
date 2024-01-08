@@ -26,7 +26,7 @@ function toggleProviders() {
         <div class="mobile-header" v-if="screenStore.platform === 'mobile'">
           <MobileHeader />
         </div>
-        <div class="main-h1">
+        <div class="main-h1" id="game">
           <Typography tag="h1" bold color="white">Главный заголовок главной страницы</Typography>
         </div>
         <Section />

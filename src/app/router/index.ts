@@ -11,7 +11,17 @@ const router = createRouter({
     {
       path: '/offers',
       name: 'Offers',
-      component: () => import('@/pages/Offers/OffersPage.vue')
+      component: () => import('@/pages/offers')
+    },
+    {
+      path: '/tourney',
+      name: 'Tourney',
+      component: () => import('@/pages/tournaments')
+    },
+    {
+      path: '/',
+      name: 'game',
+      component: () => import('@/pages/games')
     }
   ]
 })
