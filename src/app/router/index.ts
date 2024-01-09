@@ -14,7 +14,7 @@ const router = createRouter({
       component: () => import('@/pages/offers')
     },
     {
-      path: '/tourney',
+      path: '/tournament',
       name: 'Tourney',
       component: () => import('@/pages/tournaments')
     },
@@ -22,6 +22,11 @@ const router = createRouter({
       path: '/',
       name: 'game',
       component: () => import('@/pages/games')
+    },
+    {
+      path: '/support',
+      name: 'support',
+      component: () => import('@/pages/support')
     }
   ]
 })

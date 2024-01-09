@@ -9,7 +9,6 @@ import LoginPopup from '@/widgets/popups/authPopup'
 import RegistrationPopup from '@/widgets/popups/registrationPopup'
 import Burger from '@/widgets/burger'
 
-
 const headerNavStore = useUnAuthHeaderNav()
 const screenStore = useScreenStore()
 
@@ -99,7 +98,6 @@ function toggleBurgerMenu() {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 15px;
   height: 142px;
 }
 
@@ -121,7 +119,7 @@ function toggleBurgerMenu() {
 .header_navigation {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   height: 100%;
 }
